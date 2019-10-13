@@ -1,3 +1,5 @@
 <div id="search-component">
-  <input #searchBox id="search-box" />
+  <form [formGroup]="search">
+    <input type="text" formControlName="searchTerm" placeholder="Búsqueda" />
+  </form>
 </div>
