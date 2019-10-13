@@ -1,0 +1,13 @@
+.grid {
+  column-count: 4;
+  column-gap: 1em;
+  .photo-of-grid {
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
+    img {
+      width: 236px;
+      border-radius: 8px;
+    }
+  }
+}

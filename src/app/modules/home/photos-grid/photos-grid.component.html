@@ -1,6 +1,6 @@
 <app-header (newSearchEvent)="showSearch($event)"></app-header>
-<p>{{ search }}</p>
-
-<div *ngFor="let photo of photos">
-  <img [src]="photo.urls.regular" [alt]="photo.alt_description" />
+<div class="grid" [ngStyle]="{ columnCount: numberOfColumns() }">
+  <div class="photo-of-grid" *ngFor="let photo of photos">
+    <img [src]="photo.urls.regular" [alt]="photo.alt_description" />
+  </div>
 </div>
