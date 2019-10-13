@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from 'src/app/service/search.service';
 
 @Component({
   selector: 'app-photos-grid',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotosGridComponent implements OnInit {
   search: string;
-  constructor() {}
+  photos: any[];
+  constructor(private searchService: SearchService) {}
 
   ngOnInit() {}
 
   showSearch(search: string) {
     this.search = search;
+    this.searchService.getPhotos(search).subscribe((photos: any) => {
+      console.log(photos);
+      this.photos = photos.results;
+    });
+    // this.photos = this.searchService.getPhotos(search);
   }
 }
