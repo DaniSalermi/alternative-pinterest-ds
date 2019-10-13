@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./photos-grid.component.scss']
 })
 export class PhotosGridComponent implements OnInit {
+  search: string;
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  showSearch(search: string) {
+    this.search = search;
   }
-
 }
