@@ -7,13 +7,11 @@
       [alt]="photo.alt_description"
     />
     <h1>{{ photo.alt_description }}</h1>
-    <h3>
-      <img
-        src="/assets/like.png"
-        alt="Like Icon"
-        width="28px"
-        height="28px"
-      />{{ photo.likes }}
-    </h3>
+    <div class="likes">
+      <img src="/assets/like.png" alt="Like Icon" width="20px" height="20px" />
+      <h3>
+        {{ photo.likes }}
+      </h3>
+    </div>
   </div>
 </div>

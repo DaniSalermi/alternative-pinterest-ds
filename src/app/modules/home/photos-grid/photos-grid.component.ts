@@ -18,7 +18,7 @@ export class PhotosGridComponent implements OnInit {
   }
 
   // Detect window size
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize() {
     this.innerWidth = window.innerWidth;
   }
@@ -35,6 +35,6 @@ export class PhotosGridComponent implements OnInit {
 
   // Función para calcular el número de columnas dentro de la pantalla según el tamaño de las misnma
   numberOfColumns() {
-    return Math.floor(this.innerWidth / 236);
+    return Math.floor(this.innerWidth / 300);
   }
 }
