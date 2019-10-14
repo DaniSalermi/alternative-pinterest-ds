@@ -1,6 +1,19 @@
 <app-header (newSearchEvent)="showSearch($event)"></app-header>
 <div class="grid" [ngStyle]="{ columnCount: numberOfColumns() }">
   <div class="photo-of-grid" *ngFor="let photo of photos">
-    <img [src]="photo.urls.regular" [alt]="photo.alt_description" />
+    <img
+      class="image"
+      [src]="photo.urls.regular"
+      [alt]="photo.alt_description"
+    />
+    <h1>{{ photo.alt_description }}</h1>
+    <h3>
+      <img
+        src="/assets/like.png"
+        alt="Like Icon"
+        width="28px"
+        height="28px"
+      />{{ photo.likes }}
+    </h3>
   </div>
 </div>
