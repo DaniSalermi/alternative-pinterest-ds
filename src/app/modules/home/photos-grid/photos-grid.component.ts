@@ -8,8 +8,10 @@ import { SearchService } from 'src/app/service/search.service';
 })
 export class PhotosGridComponent implements OnInit {
   search: string;
-  photos: any[];
+  photos: any[] = [];
   innerWidth: any;
+  page = 1;
+  isLoading: boolean;
   constructor(private searchService: SearchService) {}
 
   ngOnInit() {
@@ -23,13 +25,32 @@ export class PhotosGridComponent implements OnInit {
     this.innerWidth = window.innerWidth;
   }
 
-  showSearch(search: string) {
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    if (
+      window.scrollY + window.innerHeight > document.body.clientHeight + 15 &&
+      !this.isLoading
+    ) {
+      this.page++;
+      this.isLoading = true;
+      console.log('Carga la pagina', this.page);
+      this.showSearch(this.search, this.page);
+    }
+  }
+
+  showSearch(search: string, page = 1) {
     this.search = search;
-    // this.searchService.getPhotos(search).subscribe((photos: any) => {
+    if (page === 1) {
+      this.photos = [];
+    }
+
+    // this.searchService.getPhotos(search, page).subscribe((photos: any) => {
     //   console.log(photos);
-    //   this.photos = photos.results;
+    //   this.photos = [...this.photos, ...photos.results];
+    //   this.isLoading = false;
     // });
-    this.photos = this.searchService.getPhotos(search);
+    this.photos = [...this.photos, ...this.searchService.getPhotos(search)];
+    this.isLoading = false;
     console.log(this.photos);
   }
 
