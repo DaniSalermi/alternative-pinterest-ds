@@ -1,0 +1,11 @@
+<div class="modal" (click)="closeModal($event)">
+  <div class="modal-content">
+    <img
+      [src]="photoInformation.urls.small"
+      [alt]="photoInformation.alt_description"
+    />
+  </div>
+</div>
+<div (click)="closeModal()" class="close-icon">
+  X
+</div>
