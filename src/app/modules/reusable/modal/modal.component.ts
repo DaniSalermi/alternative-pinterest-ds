@@ -20,4 +20,8 @@ export class ModalComponent implements OnInit {
       this.closeModalEvent.emit();
     }
   }
+
+  getModalImage(photoInformation) {
+    return `url(${photoInformation.urls.small})`;
+  }
 }
