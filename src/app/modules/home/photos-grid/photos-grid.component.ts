@@ -10,6 +10,8 @@ export class PhotosGridComponent implements OnInit {
   search: string;
   photos: any[];
   innerWidth: any;
+  modalIsOpen: boolean;
+  photoSelected: any;
   constructor(private searchService: SearchService) {}
 
   ngOnInit() {
@@ -36,5 +38,16 @@ export class PhotosGridComponent implements OnInit {
   // Función para calcular el número de columnas dentro de la pantalla según el tamaño de las misnma
   numberOfColumns() {
     return Math.floor(this.innerWidth / 300);
+  }
+
+  // Open modal function
+  openModal(photo) {
+    this.photoSelected = photo;
+    this.modalIsOpen = true;
+  }
+
+  // Close modal function
+  closeModal() {
+    this.modalIsOpen = false;
   }
 }

@@ -5,6 +5,7 @@
       class="image"
       [src]="photo.urls.regular"
       [alt]="photo.alt_description"
+      (click)="openModal(photo)"
     />
     <h1>{{ photo.alt_description }}</h1>
     <div class="likes">
@@ -15,3 +16,8 @@
     </div>
   </div>
 </div>
+<app-modal
+  (closeModalEvent)="closeModal($event)"
+  [photoInformation]="photoSelected"
+  *ngIf="modalIsOpen"
+></app-modal>
