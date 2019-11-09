@@ -11,9 +11,7 @@ export class ModalComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.photoInformation);
-  }
+  ngOnInit() {}
 
   closeModal(event = null) {
     if ((event && event.srcElement.className === 'modal') || !event) {
