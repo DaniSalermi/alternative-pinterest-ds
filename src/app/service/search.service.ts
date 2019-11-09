@@ -4017,9 +4017,9 @@ export class SearchService {
   constructor(private httpClient: HttpClient) {}
 
   /** GET photos from the server */
-  getPhotos(search: string) {
+  getPhotos(search: string, page = 1) {
     // return this.httpClient.get(
-    //   `${this.unsplashUrl}/search/photos?query=${search}&per_page=20`,
+    //   `${this.unsplashUrl}/search/photos?query=${search}&per_page=20&page=${page}`,
     //   this.httpOptions
     // );
     return this.exampleData.results;
