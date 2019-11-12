@@ -75,7 +75,7 @@
           border-radius: 30px;
           display: flex;
           align-items: center;
-          width: auto;
+          width: fit-content;
           svg {
             padding: 0 4px;
           }
@@ -96,6 +96,19 @@
             color: #333333;
             font-size: 14px;
             font-weight: normal;
+          }
+        }
+        .user-information {
+          display: flex;
+          align-items: center;
+          img {
+            border-radius: 20px;
+          }
+          h3 {
+            color: #333333;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 0 8px;
           }
         }
       }
