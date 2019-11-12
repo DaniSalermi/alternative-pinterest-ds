@@ -1,0 +1,77 @@
+<app-header></app-header>
+
+<div class="modal" (click)="closeModal($event)">
+  <div class="modal-content">
+    <div class="body">
+      <div
+        class="modal-image"
+        [ngStyle]="{
+          backgroundImage: 'url(' + photoInformation.urls.regular + ')'
+        }"
+      ></div>
+      <div class="modal-information">
+        <div class="modal-header">
+          <div class="modal-icons">
+            <div>
+              <svg
+                height="20"
+                width="20"
+                viewBox="0 0 24 24"
+                aria-label="Más opciones"
+                role="img"
+              >
+                <path
+                  d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <svg
+                height="20"
+                width="20"
+                viewBox="0 0 24 24"
+                aria-label="Enviar"
+                role="img"
+              >
+                <path
+                  d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <a [href]="photoInformation.links.html" target="_blank">
+          <div class="modal-url">
+            <svg
+              height="15"
+              width="15"
+              viewBox="0 0 24 24"
+              aria-label="Visita jamhands.net"
+              role="img"
+            >
+              <path
+                d="M4.9283,1 C3.6273,1 2.5713,2.054 2.5713,3.357 C2.5713,4.66 3.6273,5.714 4.9283,5.714 L14.9523,5.714 L1.6893,18.976 C0.7703,19.896 0.7703,21.389 1.6893,22.31 C2.1503,22.771 2.7533,23 3.3573,23 C3.9603,23 4.5633,22.771 5.0243,22.31 L18.2853,9.047 L18.2853,19.071 C18.2853,20.374 19.3413,21.429 20.6433,21.429 C21.9443,21.429 23.0003,20.374 23.0003,19.071 L23.0003,1 L4.9283,1 Z"
+              ></path>
+            </svg>
+            <h3>
+              unsplash.com
+            </h3>
+          </div>
+        </a>
+
+        <div class="modal-title">
+          <h1>
+            {{ photoInformation.alt_description }}
+          </h1>
+          <h3>
+            {{ photoInformation.description }}
+          </h3>
+        </div>
+        <div class="user-information">
+          <img [src]="photoInformation.user.profile_image.small" alt="" />
+          <h3>{{ photoInformation.user.name }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
