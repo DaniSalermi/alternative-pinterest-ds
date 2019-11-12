@@ -30,7 +30,7 @@ export class PhotosGridComponent implements OnInit {
   @HostListener("window:scroll")
   onWindowScroll() {
     if (
-      window.scrollY + window.innerHeight > document.body.clientHeight + 15 &&
+      window.scrollY + window.innerHeight + 15 > document.body.clientHeight &&
       !this.isLoading
     ) {
       this.page++;
