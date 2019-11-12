@@ -4019,11 +4019,11 @@ export class SearchService {
 
   /** GET photos from the server */
   getPhotos(search: string, page = 1) {
-    // return this.httpClient.get(
-    //   `${this.unsplashUrl}/search/photos?query=${search}&per_page=20&page=${page}`,
-    //   this.httpOptions
-    // );
-    return this.exampleData.results;
+    return this.httpClient.get(
+      `${this.unsplashUrl}/search/photos?query=${search}&per_page=20&page=${page}`,
+      this.httpOptions
+    );
+    // return this.exampleData.results;
   }
 
   selectPhoto(photoInfo) {

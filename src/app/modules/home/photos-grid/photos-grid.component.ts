@@ -46,14 +46,14 @@ export class PhotosGridComponent implements OnInit {
       this.photos = [];
     }
 
-    // this.searchService.getPhotos(search, page).subscribe((photos: any) => {
-    //   console.log(photos);
-    //   this.photos = [...this.photos, ...photos.results];
-    //   this.isLoading = false;
-    // });
-    this.photos = [...this.photos, ...this.searchService.getPhotos(search)];
-    this.isLoading = false;
-    console.log(this.photos);
+    this.searchService.getPhotos(search, page).subscribe((photos: any) => {
+      console.log(photos);
+      this.photos = [...this.photos, ...photos.results];
+      this.isLoading = false;
+    });
+    // this.photos = [...this.photos, ...this.searchService.getPhotos(search)];
+    // this.isLoading = false;
+    // console.log(this.photos);
   }
 
   // Función para calcular el número de columnas dentro de la pantalla según el tamaño de las misnma
