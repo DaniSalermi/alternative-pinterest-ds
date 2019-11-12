@@ -1,10 +1,10 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { SearchService } from 'src/app/service/search.service';
+import { Component, OnInit, HostListener } from "@angular/core";
+import { SearchService } from "src/app/service/search.service";
 
 @Component({
-  selector: 'app-photos-grid',
-  templateUrl: './photos-grid.component.html',
-  styleUrls: ['./photos-grid.component.scss']
+  selector: "app-photos-grid",
+  templateUrl: "./photos-grid.component.html",
+  styleUrls: ["./photos-grid.component.scss"]
 })
 export class PhotosGridComponent implements OnInit {
   search: string;
@@ -17,17 +17,17 @@ export class PhotosGridComponent implements OnInit {
   constructor(private searchService: SearchService) {}
 
   ngOnInit() {
-    this.showSearch('hola');
+    this.showSearch("hola");
     this.onResize();
   }
 
   // Detect window size
-  @HostListener('window:resize')
+  @HostListener("window:resize")
   onResize() {
     this.innerWidth = window.innerWidth;
   }
 
-  @HostListener('window:scroll')
+  @HostListener("window:scroll")
   onWindowScroll() {
     if (
       window.scrollY + window.innerHeight > document.body.clientHeight + 15 &&
@@ -35,7 +35,7 @@ export class PhotosGridComponent implements OnInit {
     ) {
       this.page++;
       this.isLoading = true;
-      console.log('Carga la pagina', this.page);
+      console.log("Carga la pagina", this.page);
       this.showSearch(this.search, this.page);
     }
   }
@@ -63,8 +63,7 @@ export class PhotosGridComponent implements OnInit {
 
   // Open modal function
   openModal(photo) {
-    this.photoSelected = photo;
-    this.modalIsOpen = true;
+    this.searchService.selectPhoto(photo);
   }
 
   // Close modal function

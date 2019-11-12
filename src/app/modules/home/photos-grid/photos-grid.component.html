@@ -1,7 +1,7 @@
 <app-header (newSearchEvent)="showSearch($event)"></app-header>
 <div class="grid" [ngStyle]="{ columnCount: numberOfColumns() }">
   <div class="photo-of-grid" *ngFor="let photo of photos">
-    <a [routerLink]="['/pin', photo.id]">
+    <a [routerLink]="['/pin', photo.id]" (click)="openModal(photo)">
       <img
         class="image"
         [src]="photo.urls.regular"
